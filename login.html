@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>
+        EquipDash Login
+    </title>
+    <link href="css/bootstrap.5.3.2.min.css" rel="stylesheet" />
+    <link href="css/fontawesome.5.15.3.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="d-none d-md-block col-md-4 left-panel login">
+                <img alt="EquipDash Logo" src="icons/logo.svg" />
+            </div>
+            <div class="col-md-8 right-panel">
+                <div class="login-box">
+                    <h2>
+                        Log In
+                    </h2>
+                    <p>
+                        Continue to EquipDash
+                    </p>
+                    <form id="loginForm">
+                        <div id="login-failed" class="login-failed d-none">
+                            <div>Sorry, that email or password didn't work. Please check your credentials and try again.</div>
+                            <a href="reset-password.html" class="reset-password" id="reset-password">Reset password</a>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-icon">
+                                <img alt="Email Icon" src="icons/email.svg" style="width: 20px; height: 20px;" />
+                            </span>
+                            <input id="email" class="form-control" placeholder="Your Email*" />
+                            <div id="email-input-error" class="invalid-input d-none">Invaild Email</div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-icon">
+                                <img alt="Password Icon" src="icons/lock.svg" style="width: 20px; height: 20px;" />
+                            </span>
+                            <input id="password" class="form-control" placeholder="Password*" type="password" />
+                            <div id="password-input-error" class="invalid-input d-none">Please enter
+                                your password</div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="rememberMe" type="checkbox" />
+                            <label class="form-check-label" for="rememberMe">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="btn btn-primary" type="submit">
+                            Log In
+                        </button>
+                        <a href="reset-password.html" class="forgot-password" id="forgot-password">
+                            Forgot your password?
+                        </a>
+                    </form>
+                    <div class="or-divider">
+                        OR
+                    </div>
+                    <a href="" class="btn-google" id="google-login">
+                        <img alt="Google Logo" src="icons/google.svg" />
+                        Login with Google
+                    </a>
+                    <div class="join-link">
+                        Don't Have an Account? <a href="sign-up.html">Join EquipDash</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function validateEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const rememberMe = document.getElementById('rememberMe').checked;
+        let success = true;
+
+        if (!validateEmail(email)) {
+            document.getElementById('email-input-error').classList.remove("d-none");
+            document.getElementById('email').classList.add("error");
+            success = false;
+        } else {
+            document.getElementById('email-input-error').classList.add("d-none");
+            document.getElementById('email').classList.remove("error");
+        }
+        if (password) {
+            document.getElementById('password-input-error').classList.add("d-none");
+            document.getElementById('password').classList.remove("error");;
+        } else {
+            document.getElementById('password-input-error').classList.remove("d-none");
+            document.getElementById('password').classList.add("error");
+            success = false;
+        }
+        if (success) {
+            console.log("passed validation");
+            document.getElementById('login-failed').classList.remove("d-none");
+        }
+
+        // Add your login logic here
+    });
+</script>
+
+</html>

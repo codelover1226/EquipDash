@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <title>
+        EquipDash Sign Up
+    </title>
+    <link href="css/bootstrap.5.3.2.min.css" rel="stylesheet" />
+    <link href="css/fontawesome.5.15.3.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="d-none d-md-block col-md-4 left-panel sign-up">
+                <img alt="EquipDash Logo" src="icons/logo.svg" />
+                <div class="signup-title">
+                    Try EquipDash <span>Free</span> for 21 days
+                </div>
+                <div class="signup-description">
+                    No Credit Card Required
+                </div>
+                <div class="signup-title1">
+                    Effortless Booking Integration for Your Business
+                </div>
+                <div class="divider"></div>
+                <div class="pros-list">
+                    <div class="d-flex gap-3">
+                        <img src="icons/green-circle-check.svg"/>
+                        <div class="description">
+                            Add seamless <span>booking to your website in minutes.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <img src="icons/green-circle-check.svg"/>
+                        <div class="description">
+                            Simplify <span>bookings, inventory, and staff in one place.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <img src="icons/green-circle-check.svg"/>
+                        <div class="description">
+                            Boost revenue with <span>smart pricing and insights.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <img src="icons/green-circle-check.svg"/>
+                        <div class="description">
+                            Quick setup, intuitive tools, and <span>24/7 support.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 right-panel">
+                <div class="signup-box">
+                    <h2>
+                        Sign Up
+                    </h2>
+                    <p>
+                        Let’s get you all set up so you can start creating your first onboarding experience. 
+                    </p>
+                    <form id="signupForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input id="first-name" class="form-control mb-0 pt-3" placeholder="First Name" />
+                                <div id="first-name-input-error" class="invalid-input d-none">Required</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input id="last-name" class="form-control mb-0 pt-3" placeholder="Last Name" />
+                                <div id="last-name-input-error" class="invalid-input d-none"></div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-icon">
+                                <img alt="Email Icon" src="icons/email.svg" style="width: 20px; height: 20px;" />
+                            </span>
+                            <input id="email" class="form-control" placeholder="Email" />
+                            <div id="email-input-error" class="invalid-input d-none">Invaild Email</div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-icon">
+                                <img alt="Password Icon" src="icons/lock.svg" style="width: 20px; height: 20px;" />
+                            </span>
+                            <input id="password" class="form-control" placeholder="Password" type="password" />
+                            <div id="password-input-error" class="invalid-input d-none">Please enter
+                                your password</div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">
+                            Sign Up
+                        </button>
+                    </form>
+                    <div class="or-divider">
+                        OR
+                    </div>
+                    <a href="#" class="btn-google" id="google-signup">
+                        <img alt="Google Logo" src="icons/google.svg" />
+                        Signup with Google
+                    </a>
+                    <div class="join-link">
+                        Already have an Account? <a href="login.html" id="sign-in-link" class="sign-in-link">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function validateEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+    document.getElementById('signupForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const first_name = document.getElementById('first-name').value;
+        const last_name = document.getElementById('last-name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        let success = true;
+
+        // validations
+        if (!first_name) {
+            document.getElementById('first-name-input-error').classList.remove("d-none");
+            document.getElementById('first-name').classList.add("error");
+            success = false;
+        } else {
+            document.getElementById('first-name-input-error').classList.add("d-none");
+            document.getElementById('first-name').classList.remove("error");
+        }
+
+        if (!validateEmail(email)) {
+            document.getElementById('email-input-error').classList.remove("d-none");
+            document.getElementById('email').classList.add("error");
+            success = false;
+        } else {
+            document.getElementById('email-input-error').classList.add("d-none");
+            document.getElementById('email').classList.remove("error");
+        }
+
+        if (password) {
+            document.getElementById('password-input-error').classList.add("d-none");
+            document.getElementById('password').classList.remove("error");
+        } else {
+            document.getElementById('password-input-error').classList.remove("d-none");
+            document.getElementById('password').classList.add("error");
+            success = false;
+        }
+
+        if (success) {
+            console.log("passed validation");
+            // Add your signup logic here
+            window.location = "sign-up-2.html"
+        }
+
+    });
+</script>
+
+</html>

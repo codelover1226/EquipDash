@@ -1,0 +1,184 @@
+<html>
+
+<head>
+    <title>
+        EquipDash Sign Up 2
+    </title>
+    <link href="css/bootstrap.5.3.2.min.css" rel="stylesheet" />
+    <link href="css/fontawesome.5.15.3.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="d-none d-md-block col-md-4 left-panel sign-up">
+                <img alt="EquipDash Logo" src="icons/logo.svg" />
+                <div class="signup-title">
+                    Try EquipDash <span>Free</span> for 21 days
+                </div>
+                <div class="signup-description">
+                    No Credit Card Required
+                </div>
+                <div class="signup-title1">
+                    Effortless Booking Integration for Your Business
+                </div>
+                <div class="divider"></div>
+                <div class="pros-list">
+                    <div class="d-flex gap-3">
+                        <img src="icons/green-circle-check.svg" />
+                        <div class="description">
+                            Add seamless <span>booking to your website in minutes.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <img src="icons/green-circle-check.svg" />
+                        <div class="description">
+                            Simplify <span>bookings, inventory, and staff in one place.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <img src="icons/green-circle-check.svg" />
+                        <div class="description">
+                            Boost revenue with <span>smart pricing and insights.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <img src="icons/green-circle-check.svg" />
+                        <div class="description">
+                            Quick setup, intuitive tools, and <span>24/7 support.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 right-panel">
+                <div class="signup-box">
+                    <h2>
+                        Setup your Business
+                    </h2>
+                    <p>
+                        Tell us about your business. This information helps us prepare your workspace
+                    </p>
+                    <form id="signup2Form" class="signup2Form">
+                        <div class="mb-3">
+                            <input id="business-name" class="form-control mb-0 pt-3" placeholder="Your Business Name" />
+                            <div id="business-name-input-error" class="invalid-input d-none">Required
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input id="website" class="form-control mb-0 pt-3" placeholder="Website (Optional)" />
+                            <div id="website-input-error" class="invalid-input d-none"></div>
+                        </div>
+                        <div class="styled-select">
+                            <img src="icons/arrow-down.svg" />
+                            <select class="form-control" id="country-select">
+                                <option value="US">
+                                    United States
+                                </option>
+                                <option value="Ca">
+                                    Canada
+                                </option>
+                                <option value="Other">
+                                    Other
+                                </option>
+                            </select>
+                        </div>
+                        <div class="divider"></div>
+                        <p>
+                            What do you want to use?
+                            <i class="fas fa-info-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom long text" style="color: #6C757D; font-size: 16px">
+                            </i>
+                            <p style="color: #303233CC; font-size: 12px;">
+                                You can select Multiple
+                            </p>
+                        </p>
+                        <div class="d-flex gap-3 mt-2">
+                            <div id="btn-rentals" class="btn btn-outline-primary btn-choice">
+                                <img src="icons/rentals.svg" />
+                                <div>Rentals</div>
+                            </div>
+                            <div id="btn-experiences" class="btn btn-outline-primary btn-choice">
+                                <img src="icons/experiences.svg" />
+                                <div>Experiences</div>
+                            </div>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" id="termsCheck" type="checkbox" value="" />
+                            <label class="form-check-label" for="termsCheck">
+                                I accept Equipdash's
+                                <a href="#" id="terms-and-conditions">
+                                    Terms &amp; Conditions
+                                </a>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary mt-4" type="submit">
+                            Get Started
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.5.3.0.min.js"></script>
+<script>
+    var rentals = false;
+    var experiences = false;
+    document.getElementById('signup2Form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        console.log("Get Started clicked")
+        const business_name = document.getElementById('business-name').value;
+        const website = document.getElementById('website').value;
+        const termsCheck = document.getElementById('termsCheck').checked;
+        const selected_country = document.getElementById('country-select').value;
+        let success = true;
+
+        // validations
+        if (!business_name) {
+            document.getElementById('business-name-input-error').classList.remove("d-none");
+            document.getElementById('business-name').classList.add("error");
+            success = false;
+        } else {
+            document.getElementById('business-name-input-error').classList.add("d-none");
+            document.getElementById('business-name').classList.remove("error");
+        }
+
+        if (success) {
+            console.log("passed validation");
+            console.log("data", {
+                business_name,
+                website,
+                termsCheck,
+                rentals,
+                experiences,
+                selected_country
+            })
+        }
+
+    });
+    document.getElementById('btn-rentals').addEventListener('click', function (event) {
+        console.log("btn-rentals clicked");
+        rentals = !rentals;
+        if (rentals) {
+            document.getElementById('btn-rentals').classList.add("selected");
+        } else {            
+            document.getElementById('btn-rentals').classList.remove("selected");
+        }
+    });
+    document.getElementById('btn-experiences').addEventListener('click', function (event) {
+        console.log("btn-experiences clicked");
+        experiences = !experiences;
+        if (experiences) {
+            document.getElementById('btn-experiences').classList.add("selected");
+        } else {            
+            document.getElementById('btn-experiences').classList.remove("selected");
+        }
+    });
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+</html>

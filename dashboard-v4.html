@@ -1,0 +1,782 @@
+<html>
+
+<head>
+    <title>
+        EquipDash Dashboard
+    </title>
+    <link href="css/bootstrap.5.3.2.min.css" rel="stylesheet" />
+    <link href="css/fontawesome.5.15.3.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="d-flex">
+        <div class="sidebar">
+            <div class="logo">
+                <img alt="EquipDash Logo" src="icons/logo.svg" />
+            </div>
+            <div class="nav-container">
+                <nav class="nav flex-column" id="nav-accordion">
+                    <div class="category-divider">
+                        General
+                    </div>
+                    <a class="nav-link active" href="#">
+                        <img src="icons/dashboard.svg" />
+                        Dashboard
+                    </a>
+                    <div class="gap"></div>
+                    <div class="category-divider">
+                        Operations
+                    </div>
+                    <a class="nav-link" href="#">
+                        <img src="icons/pos.svg" />
+                        POS
+                    </a>
+                    <a class="nav-link" href="#">
+                        <img src="icons/calendar.svg" />
+                        Calendar
+                    </a>
+                    <a aria-controls="bookingsMenu" aria-expanded="false" class="nav-link justify-content-between"
+                        data-bs-parent="#nav-accordion" data-bs-toggle="collapse" href="#bookingsMenu"
+                        data-bs-target="#bookingsMenu" role="button">
+                        <div class="d-flex" style="gap: 10px;">
+                            <img src="icons/bookings.svg" />
+                            Bookings
+                        </div>
+                        <img src="icons/arrow-down-w.svg" class="collapse" id="bookingsMenu" />
+                    </a>
+                    <div class="collapse" id="bookingsMenu">
+                        <a class="nav-link ms-3" href="#">
+                            All Bookings
+                        </a>
+                        <a class="nav-link ms-3" href="#">
+                            New Booking
+                        </a>
+                    </div>
+                    <div class="gap"></div>
+                    <div class="category-divider">
+                        Services
+                    </div>
+                    <a aria-controls="rentalsMenu" aria-expanded="false" class="nav-link justify-content-between"
+                        data-bs-parent="#nav-accordion" data-bs-toggle="collapse" href="#rentalsMenu"
+                        data-bs-target="#rentalsMenu" role="button">
+                        <div class="d-flex" style="gap: 10px;">
+                            <img src="icons/rentals-w.svg" />
+                            Rentals
+                        </div>
+                        <img src="icons/arrow-down-w.svg" class="collapse" id="rentalsMenu" />
+                    </a>
+                    <div class="collapse" id="rentalsMenu">
+                        <a class="nav-link ms-3" href="#">
+                            All Rentals
+                        </a>
+                        <a class="nav-link ms-3" href="#">
+                            New Rental
+                        </a>
+                    </div>
+                    <a aria-controls="experiencesMenu" aria-expanded="false" class="nav-link justify-content-between"
+                        data-bs-parent="#nav-accordion" data-bs-toggle="collapse" href="#experiencesMenu"
+                        data-bs-target="#experiencesMenu" role="button">
+                        <div class="d-flex" style="gap: 10px;">
+                            <img src="icons/experiences-w.svg" />
+                            Experiences
+                        </div>
+                        <img src="icons/arrow-down-w.svg" class="collapse" id="experiencesMenu" />
+                    </a>
+                    <div class="collapse" id="experiencesMenu">
+                        <a class="nav-link ms-3" href="#">
+                            All Experiences
+                        </a>
+                        <a class="nav-link ms-3" href="#">
+                            New Experience
+                        </a>
+                    </div>
+                    <div class="gap"></div>
+                    <div class="category-divider">
+                        Management
+                    </div>
+                    <a aria-controls="customersMenu" aria-expanded="false" class="nav-link justify-content-between"
+                        data-bs-parent="#nav-accordion" data-bs-toggle="collapse" href="#customersMenu"
+                        data-bs-target="#customersMenu" role="button">
+                        <div class="d-flex" style="gap: 10px;">
+                            <img src="icons/customers-w.svg" />
+                            Customers
+                        </div>
+                        <img src="icons/arrow-down-w.svg" class="collapse" id="customersMenu" />
+                    </a>
+                    <div class="collapse" id="customersMenu">
+                        <a class="nav-link ms-3" href="#">
+                            All Customers
+                        </a>
+                        <a class="nav-link ms-3" href="#">
+                            New Customer
+                        </a>
+                    </div>
+                    <a aria-controls="staffMenu" aria-expanded="false" class="nav-link justify-content-between"
+                        data-bs-parent="#nav-accordion" data-bs-toggle="collapse" href="#staffMenu"
+                        data-bs-target="#staffMenu" role="button">
+                        <div class="d-flex" style="gap: 10px;">
+                            <img src="icons/staff-w.svg" />
+                            Staff
+                        </div>
+                        <img src="icons/arrow-down-w.svg" class="collapse" id="staffMenu" />
+                    </a>
+                    <div class="collapse" id="staffMenu">
+                        <a class="nav-link ms-3" href="#">
+                            All Staff
+                        </a>
+                        <a class="nav-link ms-3" href="#">
+                            New Staff
+                        </a>
+                    </div>
+                    <a class="nav-link" href="#">
+                        <img src="icons/reports-w.svg" />
+                        Reports
+                    </a>
+                    <a class="nav-link" href="#">
+                        <img src="icons/settings-w.svg" />
+                        Settings
+                    </a>
+                    <div class="gap"></div>
+                    <div class="category-divider">
+                        Support
+                    </div>
+                    <a class="nav-link" href="#">
+                        <img src="icons/help-center-w.svg" />
+                        Help Center
+                    </a>
+                </nav>
+            </div>
+            <div class="user-info" aria-controls="user-info-box" aria-expanded="false"
+                class="nav-link justify-content-between" data-bs-parent="#nav-accordion" data-bs-toggle="collapse"
+                data-bs-target="#user-info-box" role="button">
+                <img alt="User profile picture" src="icons/user-profile.svg" />
+                <span>
+                    Alex D
+                </span>
+                <img alt="left arrow" class="arrow-left" src="icons/arrow-down-w.svg" />
+            </div>
+            <div class="collapse user-info-box" id="user-info-box">
+                <a href="#" class="profile d-flex gap-3" id="user-profile-info">
+                    <img alt="User profile picture" src="icons/user-profile.svg" />
+                    <div class="info">
+                        <div class="name">Alex D</div>
+                        <div class="email">alex.d@gmail.com</div>
+                    </div>
+                </a>
+                <div class="divider"></div>
+                <a href="#" class="update-profile" id="user-profile-update">
+                    <img src="icons/user-profile-1.svg" />
+                    Update Profile
+                </a>
+                <a href="#" class="log-out" id="user-log-out">
+                    <img src="icons/log-out.svg" />
+                    Log out
+                </a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center title">
+                <div>
+                    Dashboard
+                </div>
+                <button class="btn btn-primary" onclick="onNewBooking()">
+                    + New Booking
+                </button>
+            </div>
+            <div class="main">
+                <ul class="nav nav-tabs mb-4">
+                    <li class="nav-item" onclick="onNavRentals()">
+                        <a class="nav-link active" href="#" id="nav-rentals">
+                            Rentals
+                            <span>34</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" onclick="onNavExperiences()">
+                        <a class="nav-link" href="#" id="nav-experiences">
+                            Experiences
+                            <span>234</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="performance-snapshot mb-4">
+                    <div class="d-flex justify-content-between mb-4">
+                        <div class="section-title">
+                            Performance snapshot
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                id="dropdownMenuButtonPeriod" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="icons/calendar-v1.svg" />
+                                <span id="dropdownMenuButtonPeriodValue">Today</span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonPeriod">
+                                <li><a class="dropdown-item" href="#" onclick="onChangePeriod('Today')">Today</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="onChangePeriod('Last 7 days')">Last 7
+                                        days</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="onChangePeriod('Last 30 days')">Last 30
+                                        days</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex content">
+                        <div class="card">
+                            <div class="card-title">
+                                Sales
+                                <img src="icons/small-info.svg" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="This week's sales are $1,200, compared to $1,876 last week, showing a decrease of $676. This indicates a decline in performance compared to the previous period." />
+                            </div>
+                            <div class="card-text">
+                                <p>$12,390</p>
+                                <span class="text-success">
+                                    <img src="icons/rise.svg" />
+                                    +3.5%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                Booking in period
+                                <img src="icons/small-info.svg" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="This week's sales are $1,200, compared to $1,876 last week, showing a decrease of $676. This indicates a decline in performance compared to the previous period." />
+                            </div>
+                            <div class="card-text">
+                                <p>434</p>
+                                <span class="text-success">
+                                    <img src="icons/rise.svg" />
+                                    +9.5%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                Bookings Received
+                                <img src="icons/small-info.svg" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    title="This week's sales are $1,200, compared to $1,876 last week, showing a decrease of $676. This indicates a decline in performance compared to the previous period." />
+                            </div>
+                            <div class="card-text">
+                                <p>13</p>
+                                <span class="text-fail">
+                                    <span>-</span>
+                                    0.0%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row upcoming-pickups-next-returns" id="upcoming-pickups-next-returns">
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-start align-items-center mb-4 gap-3 section-title">
+                            <span class="section-title">Upcoming Pickup</span>
+                            <span class="late-pickups">Late Pickups (3)</span>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Booking No</th>
+                                    <th>Customer Info</th>
+                                    <th>Pickup Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-bs-toggle="modal" data-bs-target="#pickupDetailModal">
+                                    <td>#45</td>
+                                    <td class="d-flex justify-content-between">Alex Johnson <span class="text-success">1
+                                            Reserved</span></td>
+                                    <td class="time">09:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#pickupDetailModal">
+                                    <td>#67</td>
+                                    <td class="d-flex justify-content-between">John Doe <span class="text-success">3
+                                            Reserved</span></td>
+                                    <td class="time">11:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#pickupDetailModal">
+                                    <td>#72</td>
+                                    <td class="d-flex justify-content-between">Emily Brown <span class="text-success">1
+                                            Reserved</span></td>
+                                    <td class="time">11:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end">
+                                        <a href="#" class="view-all">View All Pickups (24) &gt;</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-start align-items-center mb-4 gap-3">
+                            <span class="section-title">Next Returns</span>
+                            <span class="late-returns">Late Returns (1)</span>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Booking No</th>
+                                    <th>Customer Info</th>
+                                    <th>Pickup Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-bs-toggle="modal" data-bs-target="#pickupDetailModal">
+                                    <td>#34</td>
+                                    <td class="d-flex justify-content-between">Jane Smith <span class="text-success">1
+                                            Reserved</span></td>
+                                    <td class="time">09:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#pickupDetailModal">
+                                    <td>#12</td>
+                                    <td class="d-flex justify-content-between">John Doe <span class="text-success">3
+                                            Reserved</span></td>
+                                    <td class="time">11:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#pickupDetailModal">
+                                    <td>#123</td>
+                                    <td class="d-flex justify-content-between">Emily Brown <span class="text-success">4
+                                            Reserved</span></td>
+                                    <td class="time">11:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end">
+                                        <a href="#" class="view-all">View All Returns (10) &gt;</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row upcoming-bookings-active-bookings d-none" id="upcoming-bookings-active-bookings">
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-start align-items-center mb-4 gap-3 section-title">
+                            <span class="section-title">Upcoming Bookings</span>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Booking No</th>
+                                    <th>Activity Name</th>
+                                    <th>Start Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-bs-toggle="modal" data-bs-target="#bookingDetailModal">
+                                    <td>#45</td>
+                                    <td class="d-flex justify-content-between">Wildlife Safari Tours
+                                        <span class="text-success">Group Size: 6</span>
+                                    </td>
+                                    <td class="time">09:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#bookingDetailModal">
+                                    <td>#67</td>
+                                    <td class="d-flex justify-content-between">Hot Air Balloon Rides
+                                    </td>
+                                    <td class="time">11:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#bookingDetailModal">
+                                    <td>#72</td>
+                                    <td class="d-flex justify-content-between">Zipline Thrills
+                                        <span class="text-success">Group Size: 4</span>
+                                    </td>
+                                    <td class="time">11:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end">
+                                        <a href="#" class="view-all">View All Bookings (24) &gt;</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-start align-items-center mb-4 gap-3">
+                            <span class="section-title">Active Bookings</span>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Booking No</th>
+                                    <th>Activity Namve</th>
+                                    <th>Start Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-bs-toggle="modal" data-bs-target="#bookingDetailModal">
+                                    <td>#34</td>
+                                    <td class="d-flex justify-content-between">Zipline Thrills
+                                    </td>
+                                    <td class="time">09:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#bookingDetailModal">
+                                    <td>#12</td>
+                                    <td class="d-flex justify-content-between">Whitewater Rafting Trips
+                                        <span class="text-success">Group Size: 6</span>
+                                    </td>
+                                    <td class="time">11:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#bookingDetailModal">
+                                    <td>#123</td>
+                                    <td class="d-flex justify-content-between">Kayaking Expeditions
+                                        <span class="text-success">Group Size: 4</span>
+                                    </td>
+                                    <td class="time">11:30 AM, 12/14/2024</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end">
+                                        <a href="#" class="view-all">View All Bookings (10) &gt;</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="availability-by-products" id="availability-by-products">
+                    <div class="d-flex justify-content-between mb-3 header">
+                        Availability by Products
+                        <button class="btn btn-secondary" onclick="onSeeAll()">See All</button>
+                    </div>
+                    <div class="card">
+                        <div class="d-flex justify-content-between days">
+                            <button class="day active">08 Dec<br><span>SUNDAY</span></button>
+                            <button class="day inactive">09 Dec<br><span>MONDAY</span></button>
+                            <button class="day inactive">10 Dec<br><span>TUESDAY</span></button>
+                            <button class="day inactive">11 Dec<br><span>WEDNESDAY</span></button>
+                            <button class="day inactive">12 Dec<br><span>THURSDAY</span></button>
+                            <button class="day inactive">13 Dec<br><span>FRIDAY</span></button>
+                            <button class="day inactive">14 Dec<br><span>SATURDAY</span></button>
+                        </div>
+                        <div class="d-flex">
+                            <div class="availability-items">
+                                <div class="item">Black Ski<br>
+                                    <p class="availability">Availability : <span>14/20</span></p>
+                                </div>
+                                <div class="item">Sleeping Bags<br>
+                                    <p class="availability">Availability :
+                                        <span>14/20</span>
+                                    </p>
+                                </div>
+                                <div class="item">Green Ski<br>
+                                    <p class="availability">Availability :
+                                        <span class="zero">0/20</span>
+                                    </p>
+                                </div>
+                                <div class="item">Snow Shoes<br>
+                                    <p class="availability">Availability : <span>14/20</span></p>
+                                </div>
+                                <div class="item">Winter Sports Gear<br>
+                                    <p class="availability">Availability :
+                                        <span>14/20</span>
+                                    </p>
+                                </div>
+                                <div class="item">Winter Sports Gear<br>
+                                    <p class="availability">Availability :
+                                        <span>14/20</span>
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="flex-grow-1 time-slots">
+                                <div class="current-time-line" style="left: 70.832%">
+                                </div>
+                                <div class="current-time" style="left: 70.832%">
+                                    9:06 AM
+                                </div>
+
+                                <div class="timeline">
+                                    <img src="icons/arrow-down.svg" style="rotate: 90deg; left: 0;"/>
+                                    <div class="time-header">01:00 AM</div>
+                                    <div class="time-header">02:00 AM</div>
+                                    <div class="time-header">03:00 AM</div>
+                                    <div class="time-header">04:00 AM</div>
+                                    <div class="time-header">05:00 AM</div>
+                                    <div class="time-header">06:00 AM</div>
+                                    <div class="time-header">07:00 AM</div>
+                                    <div class="time-header">08:00 AM</div>
+                                    <div class="time-header">09:00 AM</div>
+                                    <div class="time-header">10:00 AM</div>
+                                    <div class="time-header">11:00 AM</div>
+                                    <div class="time-header">12:00 PM</div>
+                                    <img src="icons/arrow-down.svg" style="rotate: -90deg; right: 0;" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center time-slot-bar">
+                                        <div class="time-slot available flex-base-10">10</div>
+                                        <div class="time-slot available flex-base-2">02</div>
+                                    </div>
+                                    <div class="d-flex align-items-center time-slot-bar">
+                                        <div class="time-slot unavailable flex-grow-1"></div>
+                                        <div class="time-slot available flex-base-5">05</div>
+                                        <div class="time-slot available flex-base-2">02</div>
+                                    </div>
+                                    <div class="d-flex align-items-center time-slot-bar">
+                                        <div class="time-slot available flex-base-4">04</div>
+                                        <div class="time-slot unavailable flex-grow-1"></div>
+                                    </div>
+                                    <div class="d-flex align-items-center time-slot-bar">
+                                        <div class="time-slot available flex-base-12">12</div>
+                                    </div>
+                                    <div class="d-flex align-items-center time-slot-bar">
+                                        <div class="time-slot available flex-base-7">07</div>
+                                        <div class="time-slot unavailable flex-grow-1"></div>
+                                    </div>
+                                    <div class="d-flex align-items-center time-slot-bar">
+                                        <div class="time-slot available flex-base-9">09</div>
+                                        <div class="time-slot available flex-base-1">01</div>
+                                        <div class="time-slot available flex-base-2">02</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="availability-by-experience d-none" id="availability-by-experience">
+                    <div class="d-flex justify-content-between mb-3 header">
+                        Availability by Experience
+                    </div>
+                    <div class="card">
+                        <div class="d-flex justify-content-between days">
+                            <button class="day active">08 Dec<br><span>SUNDAY</span></button>
+                            <button class="day inactive">09 Dec<br><span>MONDAY</span></button>
+                            <button class="day inactive">10 Dec<br><span>TUESDAY</span></button>
+                            <button class="day inactive">11 Dec<br><span>WEDNESDAY</span></button>
+                            <button class="day inactive">12 Dec<br><span>THURSDAY</span></button>
+                            <button class="day inactive">13 Dec<br><span>FRIDAY</span></button>
+                            <button class="day inactive">14 Dec<br><span>SATURDAY</span></button>
+                        </div>
+                        <div class="d-flex">
+                            <div class="flex-grow-1 time-slots">
+                                <div class="current-time-line" style="left: 70.832%">
+                                </div>
+                                <div class="current-time" style="left: 70.832%">
+                                    9:06 AM
+                                </div>
+
+                                <div class="timeline">
+                                    <img src="icons/arrow-down.svg" style="rotate: 90deg; left: 0;"/>
+                                    <div class="time-header">01:00 AM</div>
+                                    <div class="time-header">02:00 AM</div>
+                                    <div class="time-header">03:00 AM</div>
+                                    <div class="time-header">04:00 AM</div>
+                                    <div class="time-header">05:00 AM</div>
+                                    <div class="time-header">06:00 AM</div>
+                                    <div class="time-header">07:00 AM</div>
+                                    <div class="time-header">08:00 AM</div>
+                                    <div class="time-header">09:00 AM</div>
+                                    <div class="time-header">10:00 AM</div>
+                                    <div class="time-header">11:00 AM</div>
+                                    <div class="time-header">12:00 PM</div>
+                                    <img src="icons/arrow-down.svg" style="rotate: -90deg; right: 0;" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center book-slot-bar">
+                                        <div class="book-slot gap flex-base-1"></div>
+                                        <div class="book-slot flex-base-3">
+                                            <div class="book-title d-flex gap-2">Scuba Diving<span>Booked: 14/20</span></div>
+                                            <div class="detail d-flex flex-wrap gap-2">
+                                                <div class="d-flex name gap-1"><img src="icons/name.svg"/>Alex Rivera </div>
+                                                <div class="d-flex time gap-1"><img src="icons/time.svg"/>02:00 AM</div>
+                                            </div>
+                                        </div>
+                                        <div class="book-slot gap flex-base-4"></div>
+                                        <div class="book-slot flex-grow-1">
+                                            <div class="book-title d-flex gap-2">Hot Air Balloon Rides<span class="failed">Booked: 5/5 </span></div>
+                                            <div class="detail d-flex flex-wrap gap-2">
+                                                <div class="d-flex name gap-1"><img src="icons/name.svg"/>Jane Smith </div>
+                                                <div class="d-flex time gap-1"><img src="icons/time.svg"/>09:00 AM</div>
+                                            </div>
+                                        </div>
+                                        <div class="book-slot gap flex-base-1"></div>
+                                    </div>
+                                    <div class="d-flex align-items-center book-slot-bar">
+                                        <div class="book-slot gap flex-base-4"></div>
+                                        <div class="book-slot flex-base-4">
+                                            <div class="book-title d-flex gap-2">Wildlife Safari<span>Booked: 8/10</span></div>
+                                            <div class="detail d-flex flex-wrap gap-2">
+                                                <div class="d-flex name gap-1"><img src="icons/name.svg"/>John Doe </div>
+                                                <div class="d-flex time gap-1"><img src="icons/time.svg"/>05:00 AM</div>
+                                            </div>
+                                        </div>
+                                        <div class="book-slot gap flex-grow-1"></div>
+                                    </div>
+                                    <div class="d-flex align-items-center book-slot-bar">
+                                        <div class="book-slot gap flex-base-2"></div>
+                                        <div class="book-slot small flex-base-1">
+                                            <div class="book-title d-flex gap-2">Wildli..<span>8/10</span></div>
+                                            <div class="detail d-flex flex-wrap gap-2">
+                                                <div class="d-flex name gap-1"><img src="icons/name.svg"/>John Doe </div>
+                                                <div class="d-flex time gap-1"><img src="icons/time.svg"/>02:30 AM</div>
+                                            </div>
+                                        </div>
+                                        <div class="book-slot gap flex-grow-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="pickupDetailModal" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="pickupDetailModalModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="">
+                        <span class="close" data-bs-dismiss="modal" aria-label="Close">&times;</span>
+                        <div class="card-header">
+                            <div class="d-flex justify-content-start mb-2">
+                                <div class="card-title d-inline">Booking No #67</div>
+                                <span class="badge ms-2">2 Resereved</span>
+                            </div>
+                            <p class="text-muted mb-2">
+                                <img src="icons/calendar-v1.svg" />
+                                Dec 9, 2024 | 2:30 PM &rarr; Dec 12, 2024 | 6:00 PM
+                            </p>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="card-body">
+                            <h6 class="activity-title">Customer Details</h6>
+                            <p class="activity-detail mb-2">Name: John Doe</p>
+                            <p class="activity-detail">Email: john.deo@gmail.com</p>
+                            <div class="divider"></div>
+                            <h6 class="rental-title">Rental Details</h6>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>QT.</th>
+                                        <th>Activity</th>
+                                        <th>Rent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1x</td>
+                                        <td>Wildlife Safari Tours</td>
+                                        <td>$1,467.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Total Excl. Taxes</td>
+                                        <td>$1,467.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Tax</td>
+                                        <td>$44.36</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="total">Total Excl. Taxes</td>
+                                        <td class="total">$1,512.03</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-primary">See More Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="bookingDetailModal" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="bookingDetailModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="">
+                        <span class="close" data-bs-dismiss="modal" aria-label="Close">&times;</span>
+                        <div class="card-header">
+                            <div class="d-flex justify-content-start mb-2">
+                                <div class="card-title d-inline">Booking No #67</div>
+                                <span class="badge ms-2">Group Size: 6</span>
+                            </div>
+                            <p class="text-muted mb-2">
+                                <img src="icons/calendar-v1.svg" />
+                                Dec 9, 2024 | 2:30 PM &rarr; Dec 12, 2024 | 6:00 PM
+                            </p>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="card-body">
+                            <h6 class="activity-title">Activity Details</h6>
+                            <p class="activity-detail">Activity Name: Wildlife Safari Tours</p>
+                            <div class="divider"></div>
+                            <h6 class="rental-title">Rental Details</h6>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>QT.</th>
+                                        <th>Activity</th>
+                                        <th>Rent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1x</td>
+                                        <td>Wildlife Safari Tours</td>
+                                        <td>$1,467.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Total Excl. Taxes</td>
+                                        <td>$1,467.67</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Tax</td>
+                                        <td>$44.36</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="total">Total Excl. Taxes</td>
+                                        <td class="total">$1,512.03</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-primary">See More Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.5.3.0.min.js"></script>
+<script>
+    document.addEventListener('click', function (event) {
+        if (document.getElementById("user-info-box").contains(event.target)) {
+            return;
+        } else {
+            document.getElementById("user-info-box").classList.remove("show")
+        }
+    });
+    const onNewBooking = () => {
+        console.log("on new booking clicked")
+    }
+    const onNavRentals = () => {
+        console.log("on nav rentals clicked")
+        document.getElementById("nav-rentals").classList.add("active")
+        document.getElementById("nav-experiences").classList.remove("active")
+        document.getElementById("upcoming-pickups-next-returns").classList.remove("d-none")
+        document.getElementById("upcoming-bookings-active-bookings").classList.add("d-none")
+        document.getElementById("availability-by-products").classList.remove("d-none")
+        document.getElementById("availability-by-experience").classList.add("d-none")
+    }
+    const onNavExperiences = () => {
+        console.log("on nav experiences clicked")
+        document.getElementById("nav-rentals").classList.remove("active")
+        document.getElementById("nav-experiences").classList.add("active")
+        document.getElementById("upcoming-pickups-next-returns").classList.add("d-none")
+        document.getElementById("upcoming-bookings-active-bookings").classList.remove("d-none")
+        document.getElementById("availability-by-products").classList.add("d-none")
+        document.getElementById("availability-by-experience").classList.remove("d-none")
+    }
+    const onChangePeriod = (val) => {
+        console.log(val);
+        document.getElementById('dropdownMenuButtonPeriodValue').innerText = val;
+    }
+    const onSeeAll = () => {
+        console.log("on see all clicked")
+    }
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+</html>
