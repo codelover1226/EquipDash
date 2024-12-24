@@ -1442,6 +1442,7 @@ html {
                     .detail {
                         img {
                             margin-top: -2px;
+                            position: relative;
                         }
 
                         .name {
