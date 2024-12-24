@@ -1014,9 +1014,11 @@ html {
                         padding: 12px 4px;
                         border-radius: 10px;
                         background-color: #F7F7F7;
+
                         &:hover {
                             background-color: #F7F7F777;
                         }
+
                         color: #003264;
 
                         span {
@@ -1071,8 +1073,26 @@ html {
                 }
             }
 
-            .time-slots {
+            .time-slots-wrapper {
                 position: relative;
+                width: 100%;
+
+                .main-time-slots {
+                    width: 100%;
+                    overflow-x: scroll;
+                    overflow-y: hidden;
+                    position: relative;
+                }
+
+                img {
+                    position: absolute;
+                    cursor: pointer;
+                    z-index: 5;
+                }
+            }
+
+            .time-slots {
+                width: 200%;
             }
 
             .time-slot-bar {
@@ -1219,15 +1239,10 @@ html {
             }
 
             .timeline {
-                position: relative;
                 display: flex;
                 align-items: center;
                 height: 60px;
                 padding: 0 8px;
-
-                img {
-                    position: absolute;
-                }
             }
 
             .timeline .time-header {
@@ -1244,6 +1259,28 @@ html {
 
         .availability-by-experience {
             padding-top: 50px;
+
+            .time-slots-wrapper {
+                position: relative;
+                width: 100%;
+
+                .main-time-slots {
+                    width: 100%;
+                    overflow-x: scroll;
+                    overflow-y: hidden;
+                    position: relative;
+                }
+
+                img {
+                    position: absolute;
+                    cursor: pointer;
+                    z-index: 5;
+                }
+            }
+
+            .time-slots {
+                width: 200%;
+            }
 
             .header {
                 font-weight: 600;
@@ -1274,7 +1311,7 @@ html {
                         border-radius: 10px;
                         background-color: #F7F7F7;
                         color: #003264;
-                            
+
                         &:hover {
                             background-color: #F7F7F777;
                         }
@@ -1293,7 +1330,7 @@ html {
                         &.active {
                             background-color: #003264;
                             color: #FFFFFF;
-                            
+
                             &:hover {
                                 background-color: #003264EE;
                             }
@@ -1314,6 +1351,7 @@ html {
                 gap: 20px;
                 padding: 8px 16px;
                 border-top: 0.5px solid #F5F5F5;
+
                 .flex-base-1 {
                     flex-basis: 8.3333%;
                 }
@@ -1376,12 +1414,14 @@ html {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+
                     .book-title {
                         font-weight: 600;
                         font-size: 16px;
                         line-height: 20px;
                         color: #303233;
                         align-items: center;
+
                         span {
                             font-weight: 600;
                             font-size: 12px;
@@ -1391,22 +1431,26 @@ html {
                             height: 24px;
                             border-radius: 20px;
                             background-color: #26AF5114;
+
                             &.failed {
                                 color: #DC1313;
                                 background-color: #DC131314;
                             }
                         }
                     }
+
                     .detail {
                         img {
                             margin-top: -2px;
                         }
+
                         .name {
                             color: #303233;
                             font-weight: 400;
                             font-size: 12px;
                             line-height: 16px;
                         }
+
                         .time {
                             color: #303233;
                             font-weight: 400;
@@ -1415,6 +1459,7 @@ html {
                         }
                     }
                 }
+
                 .small.book-slot {
                     height: 96px;
                 }
@@ -1684,7 +1729,18 @@ a {
     display: block;
 }
 
-.modal {
+.modal-custom {
+    box-shadow: 0 1px 8px #0000001A;
+    position: fixed;
+    height: fit-content;
+    z-index: -1;
+    background-color: white;
+    border-radius: 12px;
+
+    &.show {
+        z-index: 10;
+    }
+
     .modal-dialog {
         width: 462px;
 
