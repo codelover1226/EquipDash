@@ -1079,7 +1079,7 @@ html {
 
                 .main-time-slots {
                     width: 100%;
-                    overflow-x: scroll;
+                    overflow-x: hidden;
                     overflow-y: hidden;
                     position: relative;
                 }
@@ -1270,7 +1270,7 @@ html {
 
                 .main-time-slots {
                     width: 100%;
-                    overflow-x: scroll;
+                    overflow-x: hidden;
                     overflow-y: hidden;
                     position: relative;
                 }
@@ -1462,6 +1462,14 @@ html {
                             font-size: 12px;
                             line-height: 16px;
                         }
+                    }
+
+                    &.gap {
+                        cursor: default;
+                    }
+                    
+                    .detail {
+                        flex-direction: column;
                     }
                 }
 
