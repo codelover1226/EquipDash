@@ -534,7 +534,7 @@ html {
     min-height: 100vh;
     transition: all;
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         margin-left: -300px;
         width: 80%;
         max-width: 300px;
@@ -742,7 +742,7 @@ html {
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         padding-left: 0px;
     }
 
@@ -757,7 +757,7 @@ html {
             display: none;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .menu-icon {
                 display: block;
                 cursor: pointer;
@@ -1794,7 +1794,7 @@ html {
             border-radius: 16px;
             padding: 20px 16px;
 
-            @media (max-width: 768px) {
+            @media (max-width: 992px) {
                 height: 111px;
                 gap: 4px;
                 ;
@@ -1807,7 +1807,7 @@ html {
                 line-height: 18.2px;
                 margin-bottom: 0;
 
-                @media (max-width: 768px) {
+                @media (max-width: 992px) {
                     padding: 0;
                     font-size: 12px;
                     line-height: 15.6px;
@@ -1828,7 +1828,7 @@ html {
                 line-height: 41.6px;
                 color: #003264;
 
-                @media (max-width: 768px) {
+                @media (max-width: 992px) {
                     flex-direction: column;
                     ;
                     align-items: start;
@@ -1852,7 +1852,7 @@ html {
                     font-size: 14px;
                     line-height: 18.2px;
 
-                    @media (max-width: 768px) {
+                    @media (max-width: 992px) {
                         padding: 0;
                     }
                 }
@@ -1952,16 +1952,31 @@ a {
     box-shadow: 0 1px 8px #0000001A;
     position: fixed;
     height: fit-content;
-    z-index: -1;
     background-color: white;
     border-radius: 12px;
+    z-index: 200;
+
+    @media (max-width: 992px) {
+        width: 100%;
+        bottom: -100%;
+        left: 0 !important;
+        top: unset !important;
+
+        &.show {
+            bottom: 0 !important;
+        }
+    }
 
     &.show {
-        z-index: 10;
+        z-index: 200;
     }
 
     .modal-dialog {
         width: 462px;
+
+        @media (max-width: 992px) {
+            width: 100%;
+        }
 
         .modal-content {
             position: relative;

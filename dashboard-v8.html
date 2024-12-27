@@ -702,7 +702,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="offcanvas-back" id="offcanvas-back" onclick="toggleSidebar()">
+                <div class="offcanvas-back" id="offcanvas-back" onclick="onClickOffcanvas()">
                 </div>
             </div>
             <div class="modal-custom fade" id="pickupDetailModal" data-bs-keyboard="false" tabindex="-1"
@@ -833,6 +833,12 @@
         document.getElementById('sidebar').classList.toggle("show");
         document.getElementById('offcanvas-back').classList.toggle("show");
     }
+    function onClickOffcanvas() {
+        document.getElementById('pickupDetailModal').classList.remove("show");
+        document.getElementById('bookingDetailModal').classList.remove("show");
+        document.getElementById('sidebar').classList.remove("show");
+        document.getElementById('offcanvas-back').classList.remove("show");
+    }
     $(document).ready(function () {
         // alert("Hi, I am vlady, could you let me know your communication method out of upwork?\n my email is naturesky0411 gmail \n please send me your contac info to this mail, if you agree on this, please ping me on upwork with 'YES!'.\n upwork doesn't allow us to communication outside of itself.")
         let longPressTimerForTimeSlot;
@@ -879,7 +885,29 @@
         })
 
         $('#upcoming-pickups-next-returns table tbody tr.data-row').click(function (event) {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 992) {
+                return;
+            }
+            // Position the modal next to the hovered row
+            var offset = $(this).offset();
+            var height = $(this).outerHeight();
+            $('#pickupDetailModal').addClass('show')
+            document.getElementById('offcanvas-back').classList.toggle("show");
+        });
+
+        $('#upcoming-bookings-active-bookings table tbody tr.data-row').click(function (event) {
+            if (window.innerWidth > 992) {
+                return;
+            }
+            // Position the modal next to the hovered row
+            var offset = $(this).offset();
+            var height = $(this).outerHeight();
+            $('#bookingDetailModal').addClass('show')
+            document.getElementById('offcanvas-back').classList.toggle("show");
+        });
+
+        $('#upcoming-pickups-next-returns table.upcoming tbody tr.data-row').hover(function (event) {
+            if (window.innerWidth <= 992) {
                 return;
             }
             // Position the modal next to the hovered row
@@ -891,24 +919,18 @@
                 top: offset.top - window.pageYOffset + height / 2 - $('#pickupDetailModal').outerHeight() / 2, // Center vertically beside row
                 left: offset.left + $(this).outerWidth() / 2 + 50 // Position to the right with some margin
             });
-        });
-
-        $('#upcoming-pickups-next-returns table.upcoming tbody tr.data-row').hover(function (event) {
-            // Position the modal next to the hovered row
-            var offset = $(this).offset();
-            var height = $(this).outerHeight();
-            $('#pickupDetailModal').addClass('show show1')
-            setTimeout(() => $('#pickupDetailModal').addClass('show1'), 110)
-            $('#pickupDetailModal').css({
-                top: offset.top - window.pageYOffset + height / 2 - $('#pickupDetailModal').outerHeight() / 2, // Center vertically beside row
-                left: offset.left + $(this).outerWidth() / 2 + 50 // Position to the right with some margin
-            });
         }, function () {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             $('#pickupDetailModal').removeClass('show')
             setTimeout(() => $('#pickupDetailModal').removeClass('show1'), 100);
         });
 
         $('#upcoming-pickups-next-returns table.next tbody tr.data-row').hover(function (event) {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             // Position the modal next to the hovered row
             var offset = $(this).offset();
             var height = $(this).outerHeight();
@@ -919,11 +941,17 @@
                 left: offset.left - $(this).outerWidth() / 2 - 50 // Position to the right with some margin
             });
         }, function () {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             $('#pickupDetailModal').removeClass('show')
             setTimeout(() => $('#pickupDetailModal').removeClass('show1'), 100);
         });
 
         $('#upcoming-bookings-active-bookings table.upcoming tbody tr.data-row').hover(function (event) {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             // Position the modal next to the hovered row
             var offset = $(this).offset();
             var height = $(this).outerHeight();
@@ -934,11 +962,17 @@
                 left: offset.left + $(this).outerWidth() / 2 + 50 // Position to the right with some margin
             });
         }, function () {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             $('#bookingDetailModal').removeClass('show')
             setTimeout(() => $('#bookingDetailModal').removeClass('show1'), 100);
         });
 
         $('#upcoming-bookings-active-bookings table.next tbody tr.data-row').hover(function (event) {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             // Position the modal next to the hovered row
             var offset = $(this).offset();
             var height = $(this).outerHeight();
@@ -949,15 +983,24 @@
                 left: offset.left - $(this).outerWidth() / 2 - 50 // Position to the right with some margin
             });
         }, function () {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             $('#bookingDetailModal').removeClass('show')
             setTimeout(() => $('#bookingDetailModal').removeClass('show1'), 100);
         });
 
         $('#pickupDetailModal').hover(function (event) {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             if ($('#pickupDetailModal').hasClass('show1')) {
                 $('#pickupDetailModal').addClass('show')
             }
         }, function () {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             $('#pickupDetailModal').removeClass('show')
         });
 
@@ -966,10 +1009,16 @@
         });
 
         $('#bookingDetailModal').hover(function (event) {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             if ($('#bookingDetailModal').hasClass('show1')) {
                 $('#bookingDetailModal').addClass('show')
             }
         }, function () {
+            if (window.innerWidth <= 992) {
+                return;
+            }
             $('#bookingDetailModal').removeClass('show')
         });
 
