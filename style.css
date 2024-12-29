@@ -690,6 +690,10 @@ html {
     display: flex;
     gap: 10px;
 
+    &.submenu {
+        border-left: 2.5px solid #EBEBEB33;
+    }
+
     img {
         margin-top: -4px;
         transition: all;

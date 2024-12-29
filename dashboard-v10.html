@@ -46,10 +46,10 @@
                         <img src="icons/arrow-down-w.svg" class="collapse" id="bookingsMenu" />
                     </a>
                     <div class="collapse" id="bookingsMenu">
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             All Bookings
                         </a>
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             New Booking
                         </a>
                     </div>
@@ -67,10 +67,10 @@
                         <img src="icons/arrow-down-w.svg" class="collapse" id="rentalsMenu" />
                     </a>
                     <div class="collapse" id="rentalsMenu">
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             All Rentals
                         </a>
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             New Rental
                         </a>
                     </div>
@@ -84,10 +84,10 @@
                         <img src="icons/arrow-down-w.svg" class="collapse" id="experiencesMenu" />
                     </a>
                     <div class="collapse" id="experiencesMenu">
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             All Experiences
                         </a>
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             New Experience
                         </a>
                     </div>
@@ -105,10 +105,10 @@
                         <img src="icons/arrow-down-w.svg" class="collapse" id="customersMenu" />
                     </a>
                     <div class="collapse" id="customersMenu">
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             All Customers
                         </a>
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             New Customer
                         </a>
                     </div>
@@ -122,10 +122,10 @@
                         <img src="icons/arrow-down-w.svg" class="collapse" id="staffMenu" />
                     </a>
                     <div class="collapse" id="staffMenu">
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             All Staff
                         </a>
-                        <a class="nav-link ms-3" href="#">
+                        <a class="nav-link ms-3 submenu" href="#">
                             New Staff
                         </a>
                     </div>
@@ -560,8 +560,10 @@
                     </div>
                 </div>
                 <div class="availability-by-experience d-none" id="availability-by-experience">
-                    <div class="d-flex justify-content-between mb-3 header">
-                        Availability by Experience
+                    <div class="justify-content-between mb-3 header">
+                        <div class="header mb-3">
+                            Availability by Experience
+                        </div>                        
                         <div class="card-wrapper">
                             <div class="card">
                                 <div class="d-flex justify-content-between days">
@@ -840,7 +842,7 @@
         document.getElementById('offcanvas-back').classList.remove("show");
     }
     $(document).ready(function () {
-        // alert("Hi, I am vlady, could you let me know your communication method out of upwork?\n my email is naturesky0411 gmail \n please send me your contac info to this mail, if you agree on this, please ping me on upwork with 'YES!'.\n upwork doesn't allow us to communication outside of itself.")
+        alert("Hi, I am vlady, could you let me know your communication method out of upwork?\n my email is naturesky0411 gmail \n please send me your contac info to this mail, if you agree on this, please ping me on upwork with 'YES!'.\n upwork doesn't allow us to communication outside of itself.")
         let longPressTimerForTimeSlot;
 
         $('#scrollTimeSlot1P').on('mousedown', function () {
